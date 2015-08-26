@@ -1,0 +1,39 @@
+
+#import "ViewController.h"
+#import "Book.h"
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    //change button to circle//
+    btnBook.layer.cornerRadius=30;
+}
+
+-(IBAction)onDispBookList:(id)sender;
+{
+    Book *bookList=[[Book alloc]initWithNibName:@"Book" bundle:nil];
+    //move to next view//
+    [self.navigationController pushViewController:bookList animated:YES];
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
